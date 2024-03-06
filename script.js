@@ -1,11 +1,12 @@
-const cdiv = document.querySelector('.container');
+const grid = document.querySelector('#grid');
 
-// Add 16 divs
-for (let i = 1; i < 257; i++) {
-  const div = document.createElement('div');
-  cdiv.appendChild(div);
-
-  div.addEventListener("mouseover", (event) => {
-    div.setAttribute('style', 'background-color: blue;');
-  })
+for (let i = 0; i < 6; i++) {
+    let row = document.createElement('div');
+    row.classList.toggle('row');
+    for (let j = 0; j < 6; j++) {
+        let square = document.createElement('div');
+        square.classList.toggle('square');
+        row.appendChild(square);
+    }
+    grid.appendChild(row);
 }
