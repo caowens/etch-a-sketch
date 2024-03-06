@@ -1,22 +1,6 @@
 // Default Grid 16x16
 const grid = document.querySelector('#grid');
 
-for (let i = 0; i < 16; i++) {
-    let row = document.createElement('div');
-    row.classList.toggle('row');
-    for (let j = 0; j < 16; j++) {
-        let square = document.createElement('div');
-        square.classList.toggle('square');
-
-        square.addEventListener('mouseover', () => {
-            square.setAttribute('style', 'background-color: blue;');
-        })
-        
-        row.appendChild(square);
-    }
-    grid.appendChild(row);
-}
-
 function resizeGrid(height, width) {
     for (let i = 0; i < height; i++) {
         let row = document.createElement('div');
@@ -26,7 +10,12 @@ function resizeGrid(height, width) {
             square.classList.toggle('square');
 
             square.addEventListener('mouseover', () => {
-                square.setAttribute('style', 'background-color: blue;');
+                let red = Math.floor(Math.random() * 256);
+                let green = Math.floor(Math.random() * 256);
+                let blue = Math.floor(Math.random() * 256);
+                let color = `rgb(${red}, ${green}, ${blue})`;
+    
+                square.style.backgroundColor = color;
             })
 
             row.appendChild(square);
@@ -34,6 +23,8 @@ function resizeGrid(height, width) {
         grid.appendChild(row);
     }
 }
+
+resizeGrid(16,16)
 
 resizeBtn = document.querySelector('#resize-btn');
 
