@@ -1,4 +1,4 @@
-// Default Grid 16x16
+
 const grid = document.querySelector('#grid');
 
 function resizeGrid(height, width) {
@@ -24,6 +24,7 @@ function resizeGrid(height, width) {
     }
 }
 
+// Default Grid 16x16
 resizeGrid(16,16)
 
 resizeBtn = document.querySelector('#resize-btn');
