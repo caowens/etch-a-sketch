@@ -22,8 +22,20 @@
 body {
     display: flex;
     flex-direction: column;
+    gap: 16px;
+    padding-top: 10px;
 }
 
 * {
     margin: 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+.input-section {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
 }
