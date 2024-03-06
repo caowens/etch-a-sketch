@@ -7,20 +7,28 @@ for (let i = 0; i < 16; i++) {
     for (let j = 0; j < 16; j++) {
         let square = document.createElement('div');
         square.classList.toggle('square');
+
+        square.addEventListener('mouseover', () => {
+            square.setAttribute('style', 'background-color: blue;');
+        })
+        
         row.appendChild(square);
     }
     grid.appendChild(row);
 }
 
 function resizeGrid(height, width) {
-    console.log(typeof(height));
-    console.log(typeof(width));
     for (let i = 0; i < height; i++) {
         let row = document.createElement('div');
         row.classList.toggle('row');
         for (let j = 0; j < width; j++) {
             let square = document.createElement('div');
             square.classList.toggle('square');
+
+            square.addEventListener('mouseover', () => {
+                square.setAttribute('style', 'background-color: blue;');
+            })
+
             row.appendChild(square);
         }
         grid.appendChild(row);
